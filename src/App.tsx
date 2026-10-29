@@ -17,7 +17,7 @@ function App() {
             <Grid size={{ xs: 12, md: 12 }} container sx={{justifyContent: 'flex-end', alignItems: 'center'}}>
                 Elemento: Alertas
 
-                <AlertUI description="Todo bn"/>
+                <AlertUI description="No se prevén lluvias"/>
             </Grid>
 
             {/* Selector */}
