@@ -18,6 +18,7 @@ function App() {
                 Elemento: Alertas
 
                 <AlertUI description="No se prevén lluvias"/>
+                <AlertUI description="Índice UV alto" severity="warning" variant="filled"/>
             </Grid>
 
             {/* Selector */}
