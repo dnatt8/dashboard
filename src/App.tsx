@@ -4,8 +4,10 @@ import HeaderUI from './components/HeaderUI';
 import AlertUI from './components/AlertUI';
 import SelectorUI from './components/SelectorUI';
 import IndicatorUI from './components/IndicatorUI';
+import useFetchData from './hooks/useFetchData';
 
 function App() {
+    const dataFetcherOutput= useFetchData();
     return (
         <Grid container spacing={5} sx={{ justifyContent: 'center', alignItems: 'center' }}>
 
@@ -33,7 +35,11 @@ function App() {
             {/* Indicadores */}
             <Grid size={{ xs: 12, md: 9 }}>
                 <Grid size={{ xs: 12, md: 3 }}>
-                    <IndicatorUI title='Temperatura (2m)' description='XX °C' />
+                    {dataFetcherOutput &&
+                        (<IndicatorUI
+                        title='Temperatura (2m)'
+                        description={`${dataFetcherOutput.current.temperature_2m} ${dataFetcherOutput.current_units.temperature_2m}`} />)
+                    }
                 </Grid>
 
                 <Grid size={{ xs: 12, md: 3 }}>

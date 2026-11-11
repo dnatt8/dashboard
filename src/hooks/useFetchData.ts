@@ -5,10 +5,10 @@ const API_URL = "https://api.open-meteo.com/v1/forecast?latitude=-2.1962&longitu
 
 export default function useFetchData(): OpenMeteoResponse | null {
 
-    const [data, setData] = useState<OpenMeteoResponse || null>(null);
+    const [data, setData] = useState<OpenMeteoResponse | null>(null);
 
     useEffect(()=>{
-        const obtenerDatos = async()=> {
+        const obtenerDatos = async () => {
             const respuesta= await fetch(API_URL);
             const json: OpenMeteoResponse = await respuesta.json();
             setData(json);
