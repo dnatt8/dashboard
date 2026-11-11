@@ -3,6 +3,7 @@ import { Grid } from '@mui/material';
 import HeaderUI from './components/HeaderUI';
 import AlertUI from './components/AlertUI';
 import SelectorUI from './components/SelectorUI';
+import IndicatorUI from './components/IndicatorUI';
 
 function App() {
     return (
@@ -30,7 +31,23 @@ function App() {
             </Grid>
 
             {/* Indicadores */}
-            <Grid size={{ xs: 12, md: 9 }}>Elemento: Indicadores</Grid>
+            <Grid size={{ xs: 12, md: 9 }}>
+                <Grid size={{ xs: 12, md: 3 }}>
+                    <IndicatorUI title='Temperatura (2m)' description='XX °C' />
+                </Grid>
+
+                <Grid size={{ xs: 12, md: 3 }}>
+                    <IndicatorUI title='Temperatura aparente' description='XX °C' />
+                </Grid>
+
+                <Grid size={{ xs: 12, md: 3 }}>
+                    <IndicatorUI title='Velocidad del viento' description='XX km/h' />
+                </Grid>
+
+                <Grid size={{ xs: 12, md: 3 }}>
+                    <IndicatorUI title='Humedad relativa' description='XX %' />
+                </Grid>
+            </Grid>
 
             {/* Gráfico */}
             <Grid size={{ xs: 12, md: 6 }} sx={{ display: { xs: 'none', md: 'block' } }}>
