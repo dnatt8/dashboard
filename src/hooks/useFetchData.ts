@@ -8,7 +8,12 @@ export default function useFetchData(): OpenMeteoResponse | null {
     const [data, setData] = useState<OpenMeteoResponse || null>(null);
 
     useEffect(()=>{
-        //petición asincrónica
+        const obtenerDatos = async()=> {
+            const respuesta= await fetch(API_URL);
+            const json: OpenMeteoResponse = await respuesta.json();
+            setData(json);
+        };
+        obtenerDatos();
     }, []); //arreglo vacío ejecuta el efecto solo después del primer renderizado
 
     return data;
