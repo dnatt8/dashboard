@@ -19,7 +19,6 @@ function App() {
 
             {/* Alertas */}
             <Grid size={{ xs: 12, md: 12 }} container sx={{justifyContent: 'flex-end', alignItems: 'center'}}>
-                Elemento: Alertas
 
                 <AlertUI description="No se prevén lluvias"/>
                 <AlertUI description="Índice UV alto" severity="warning" variant="filled"/>
