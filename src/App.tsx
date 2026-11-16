@@ -70,13 +70,28 @@ function App() {
 
             {/* Gráfico */}
             <Grid size={{ xs: 12, md: 6 }} sx={{ display: { xs: 'none', md: 'block' } }}>
-		<ChartUI />
-            </Grid>
+	    	{dataFetcherOutput && (
+        	<ChartUI
+            		title='Temperatura y viento por hora'
+            		labels={dataFetcherOutput.hourly.time.map((tiempo) => tiempo.slice(11))}
+            		values1={dataFetcherOutput.hourly.temperature_2m}
+            		values2={dataFetcherOutput.hourly.wind_speed_10m}
+            		label1={`Temperatura (${dataFetcherOutput.hourly_units.temperature_2m})`}
+            		label2={`Viento (${dataFetcherOutput.hourly_units.wind_speed_10m})`} />
+    		)}
+	    </Grid>
 
             {/* Tabla */}
             <Grid size={{ xs: 12, md: 6 }} sx={{ display: { xs: 'none', md: 'block' } }}>
-        	<TableUI /> 
-            </Grid>
+            	{dataFetcherOutput && (
+        		<TableUI
+            		labels={dataFetcherOutput.hourly.time.map((tiempo) => tiempo.slice(11))}
+            		values1={dataFetcherOutput.hourly.temperature_2m}
+            		values2={dataFetcherOutput.hourly.wind_speed_10m}
+            		header1={`Temperatura (${dataFetcherOutput.hourly_units.temperature_2m})`}
+            		header2={`Viento (${dataFetcherOutput.hourly_units.wind_speed_10m})`} />
+    		)}
+	    </Grid>
 
             {/* Información adicional */}
             <Grid size={{ xs: 12, md: 12 }}>Elemento: Información adicional</Grid>

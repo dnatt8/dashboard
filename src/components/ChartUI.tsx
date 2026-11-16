@@ -14,15 +14,15 @@ export default function ChartUI({ title, labels, values1, values2, label1, label
     return (
         <>
             <Typography variant="h5" component="div">
-                Chart arrLabels vs arrValues1 & arrValues2
-            </Typography>
+            	{title}
+	    </Typography>
             <LineChart
                 height={300}
                 series={[
                     { data: values1, label: 'label1' },
                     { data: values2, label: 'label2' },
                 ]}
-                xAxis={[{ scaleType: 'point', data: arrLabels }]}
+                xAxis={[{ scaleType: 'point', data: labels}]}
             />
         </>
     );
