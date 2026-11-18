@@ -19,7 +19,6 @@ function App() {
 
             {/* Encabezado */}
             <Grid size={{ xs: 12, md: 12 }}>
-                Elemento: Encabezado
                 <HeaderUI />
             </Grid>
 
@@ -38,7 +37,7 @@ function App() {
             </Grid>
 
             {/* Indicadores */}
-            <Grid size={{ xs: 12, md: 9 }}>
+            <Grid size={{ xs: 12, md: 9 }} container>
 	        {loading && <CircularProgress />}
                 {error && <Alert severity="error">{error}</Alert>}
 
@@ -101,7 +100,7 @@ function App() {
 	    </Grid>
 
             {/* Información adicional */}
-            <Grid size={{ xs: 12, md: 12 }}>Elemento: Información adicional</Grid>
+            <Grid size={{ xs: 12, md: 12 }}>DAWM - 2026</Grid>
 
         </Grid>
     );
